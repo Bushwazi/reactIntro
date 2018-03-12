@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import MessageForm from './MessageForm.jsx';
+import MessageList from './MessageList.jsx';
 
 
 class MessagesSection extends Component {
   render(){
+    console.log("MessagesSection", this.props)
+    let {activeChannel} = this.props;
     return (
-      <div className='support panel panel-primary'>
+      <div className='messages-container panel panel-default'>
         <div className='panel-heading'>
-          <div className="panel-heading">
-            <strong>Messages</strong>
-          </div>
+          <strong>{activeChannel.name}</strong>
         </div>
-        <div className='panel-body channels'>
-          {/*<ChannelList {...this.props} />
-          <ChannelForm {...this.props} />*/}
+        <div className='panel-body messages'>
+          <MessageList {...this.props} />
+          <MessageForm {...this.props} />
         </div>
       </div>
       
@@ -22,10 +24,9 @@ class MessagesSection extends Component {
 }
 
 MessagesSection.propTypes = {
-  // channels: PropTypes.array.isRequired,
-  // setChannel: PropTypes.func.isRequired,
-  // addChannel: PropTypes.func.isRequired,
-  // activeChannel: PropTypes.object.isRequired
+  messages: PropTypes.array.isRequired,
+  activeChannel: PropTypes.object.isRequired,
+  addMessage: PropTypes.func.isRequired
 }
 
 export default MessagesSection
