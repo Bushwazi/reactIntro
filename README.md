@@ -6,4 +6,4 @@
 * To address the fixes, I walked through WebPack's current documentation, add all the same modules as their most recent version
 * Moved all the source files into /src
 * Updated repo to use prop-types because it was moved out of React
-* _To view the output_, you need to run `$ build` from the _dist directory_
+* __To view the output__, you need to run `$ build` from the __dist directory__
