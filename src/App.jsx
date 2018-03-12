@@ -31,7 +31,7 @@ class App extends Component{
   }
   addMessage(body){
     let {messages, users} = this.state,
-        createdAt = new Date(Date.now()),
+        createdAt = new Date,
         author = users.length > 0 ? users[0].name : 'anon';
     messages.push({id: messages.length, body, createdAt, author});
     this.setState({messages});
